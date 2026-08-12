@@ -1611,7 +1611,7 @@ function openPersona(character) {
   personaBackdrop.classList.remove(
     'hidden'
   );
-
+document.body.classList.add('overlay-open');
 
   document.body.style.overflow =
     'hidden';
@@ -1629,7 +1629,7 @@ function closePersona() {
     'hidden'
   );
 
-
+  document.body.classList.remove('overlay-open');
   document.body.style.overflow =
     '';
 
@@ -2210,6 +2210,7 @@ function openPanel(step) {
 
   journeyView.classList.add(
     'is-shifted'
+document.body.classList.add('overlay-open');
   );
 
 }
@@ -2229,6 +2230,7 @@ function closePanel() {
 
   journeyView.classList.remove(
     'is-shifted'
+document.body.classList.remove('overlay-open');
   );
 
 }

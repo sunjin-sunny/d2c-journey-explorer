@@ -1359,3 +1359,87 @@ body.lang-switch-lower .language-switch {
     top: 66px;
   }
 }
+/* =========================================================
+   MOBILE OVERLAY / LANGUAGE SWITCH FIX
+   ========================================================= */
+
+@media (max-width: 860px) {
+
+  /* -----------------------------------------
+     Language switch
+     모바일에서는 스크롤을 따라다니지 않음
+     ----------------------------------------- */
+  .language-switch {
+    position: absolute;
+    top: 18px;
+    right: 16px;
+    z-index: 60;
+  }
+
+  /* Ending / Behind에서도 억지로 아래로 이동시키지 않음 */
+  body.lang-switch-lower .language-switch {
+    top: 18px;
+  }
+
+
+  /* -----------------------------------------
+     Persona / Pointer panel이 열리면
+     언어 스위치는 숨김
+     ----------------------------------------- */
+  body.overlay-open .language-switch {
+    display: none;
+  }
+
+
+  /* -----------------------------------------
+     Persona 닫기 버튼
+     ----------------------------------------- */
+  .persona-close {
+    position: fixed;
+
+    top: 16px;
+    right: 16px;
+
+    z-index: 200;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  /* Persona 내용 위쪽 공간 확보 */
+  .persona-modal {
+    padding-top: 72px;
+  }
+
+
+  /* -----------------------------------------
+     빨간점 상세 패널 닫기 버튼
+     ----------------------------------------- */
+  .panel-close {
+    position: fixed;
+
+    top: 16px;
+    right: 16px;
+
+    z-index: 200;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  /* X와 첫 문장이 겹치지 않도록 */
+  .panel {
+    padding-top: 72px;
+  }
+
+}
