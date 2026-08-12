@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <title>D2C Journey Explorer — AI Wave Lab</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- =========================================================
+       Language switch
+       ========================================================= -->
+  <div class="language-switch" id="languageSwitch">
+    <button class="lang-btn is-active" data-lang="en" type="button">
+      EN
+    </button>
+
+    <span class="lang-divider">/</span>
+
+    <button class="lang-btn" data-lang="ko" type="button">
+      KO
+    </button>
+  </div>
+
+
+  <!-- =========================================================
+       화면 1) 랜딩
+       ========================================================= -->
+  <main class="landing" id="landingView">
+
+    <div class="site-ci site-wordmark">
+      AI Wave Lab
+    </div>
+
+    <div class="glow"></div>
+
+
+    <header class="hero">
+
+      <p class="eyebrow">
+        Sunny's Shop
+      </p>
+
+
+      <h1 class="hero-title">
+
+        <span id="heroTitle">
+          Every purchase has a journey.
+        </span>
+
+        <br />
+
+        <span
+          class="hero-title-sub"
+          id="heroSubtitle"
+        >
+          Discover who's behind it.
+        </span>
+
+      </h1>
+
+
+      <p class="hint">
+
+        <span class="hint-dot"></span>
+
+        <span id="heroHint">
+          Tap the glowing dot on each screen
+        </span>
+
+      </p>
+
+    </header>
+
+
+    <section class="chooser">
+
+      <p
+        class="section-label"
+        id="chooseCustomer"
+      >
+        Choose a customer
+      </p>
+
+
+      <div
+        class="card-grid"
+        id="cardGrid"
+      ></div>
+
+    </section>
+
+
+    <button
+      class="behind-cta"
+      type="button"
+    >
+
+      <span
+        class="behind-cta-label"
+        id="landingBehindLabel"
+      >
+        Behind this Project
+      </span>
+
+
+      <span class="behind-cta-arrow">
+
+        <span class="behind-cta-line"></span>
+
+        <span class="behind-cta-head">
+          →
+        </span>
+
+      </span>
+
+    </button>
+
+  </main>
+
+
+  <!-- =========================================================
+       화면 2) 저니
+       ========================================================= -->
+  <main
+    class="journey hidden"
+    id="journeyView"
+  >
+
+    <div class="site-ci site-wordmark">
+      Sunny's Shop
+    </div>
+
+
+    <button
+      class="back-btn"
+      id="backBtn"
+      type="button"
+    >
+      ← Characters
+    </button>
+
+
+    <nav
+      class="progress"
+      id="progressBar"
+    ></nav>
+
+
+    <div class="device">
+
+      <div
+        class="device-screen"
+        id="deviceScreen"
+      >
+
+        <img
+          id="screenImage"
+          src=""
+          alt="Journey screen"
+        />
+
+
+        <div
+          class="pointer-layer"
+          id="pointerLayer"
+        ></div>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="nav"
+      id="navArea"
+    >
+
+      <button
+        class="nav-btn"
+        id="prevBtn"
+        type="button"
+      >
+        ← Previous
+      </button>
+
+
+      <span
+        class="nav-count"
+        id="stepCount"
+      >
+        1 / 1
+      </span>
+
+
+      <button
+        class="nav-btn nav-btn--primary"
+        id="nextBtn"
+        type="button"
+      >
+        Next →
+      </button>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================================================
+       화면 3) 엔딩
+       ========================================================= -->
+  <main
+    class="ending hidden"
+    id="endingView"
+  >
+
+    <div class="site-ci site-wordmark">
+      Sunny's Shop
+    </div>
+
+    <div class="glow"></div>
+
+
+    <button
+      class="ending-nav ending-nav--back"
+      id="endingBackBtn"
+      type="button"
+    >
+      ← Back
+    </button>
+
+
+    <button
+      class="ending-nav ending-nav--home"
+      id="endingHomeBtn"
+      type="button"
+      aria-label="Home"
+    >
+
+      <svg
+        width="17"
+        height="17"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M3 10.5 12 3l9 7.5" />
+        <path d="M5.5 9.5V20a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V9.5" />
+      </svg>
+
+    </button>
+
+
+    <p
+      class="ending-eyebrow"
+      id="endingEyebrow"
+    ></p>
+
+
+    <h1
+      class="ending-lead"
+      id="endingLead"
+    ></h1>
+
+
+    <div
+      class="group-grid"
+      id="groupGrid"
+    ></div>
+
+
+    <p
+      class="ending-line reveal-item"
+      id="endingAfter"
+    ></p>
+
+
+    <p
+      class="ending-planning reveal-item"
+      id="endingPlanning"
+    ></p>
+
+
+    <div
+      class="ending-closing reveal-item"
+      id="endingClosing"
+    >
+
+      <p
+        class="closing-a"
+        id="closingA"
+      ></p>
+
+      <p
+        class="closing-b"
+        id="closingB"
+      ></p>
+
+    </div>
+
+
+    <div
+      class="reveal-item"
+      id="endingActions"
+    >
+
+      <button
+        class="behind-cta"
+        type="button"
+      >
+
+        <span
+          class="behind-cta-label"
+          id="endingBehindLabel"
+        >
+          Behind this Project
+        </span>
+
+
+        <span class="behind-cta-arrow">
+
+          <span class="behind-cta-line"></span>
+
+          <span class="behind-cta-head">
+            →
+          </span>
+
+        </span>
+
+      </button>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================================================
+       화면 4) Behind this Project
+       ========================================================= -->
+  <main
+    class="behind hidden"
+    id="behindView"
+  >
+
+    <div class="site-ci site-wordmark">
+      Sunny's Shop
+    </div>
+
+
+    <button
+      class="ending-nav ending-nav--back"
+      id="behindBackBtn"
+      type="button"
+    >
+      ← Back
+    </button>
+
+
+    <button
+      class="ending-nav ending-nav--home"
+      id="behindHomeBtn"
+      type="button"
+      aria-label="Home"
+    >
+
+      <svg
+        width="17"
+        height="17"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M3 10.5 12 3l9 7.5" />
+        <path d="M5.5 9.5V20a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V9.5" />
+      </svg>
+
+    </button>
+
+
+    <div class="behind-inner">
+
+      <p
+        class="behind-eyebrow"
+        id="behindEyebrow"
+      >
+        Behind this Project
+      </p>
+
+
+      <h1
+        class="behind-title"
+        id="behindTitle"
+      >
+        How I built a global D2C journey explorer with AI
+      </h1>
+
+
+      <p
+        class="behind-sub"
+        id="behindSub"
+      >
+        A personal experiment in product thinking,
+        customer journey design,
+        generative AI and vibe coding.<br />
+
+        Built from concept to working prototype
+        without a traditional development background.
+      </p>
+
+
+      <!-- Project stats -->
+      <div class="behind-stats">
+
+        <div>
+          <strong>3</strong>
+          <span id="statMarkets">Markets</span>
+        </div>
+
+        <div>
+          <strong>3</strong>
+          <span id="statPersonas">Personas</span>
+        </div>
+
+        <div>
+          <strong>12</strong>
+          <span id="statMoments">Customer Moments</span>
+        </div>
+
+        <div>
+          <strong>3</strong>
+          <span id="statCategories">Product Categories</span>
+        </div>
+
+        <div>
+          <strong>AI</strong>
+          <span id="statAi">Co-built</span>
+        </div>
+
+        <div>
+          <strong>0</strong>
+          <span id="statFrameworks">Frameworks</span>
+        </div>
+
+      </div>
+
+
+      <!-- Project story -->
+      <ol class="behind-list">
+
+
+        <li>
+
+          <h2 id="behindH1">
+            I started with a customer journey,
+            not an org chart.
+          </h2>
+
+          <p id="behindP1">
+            The original question was simple:
+            <strong>
+              what actually happens behind a customer's purchase journey?
+            </strong>
+            Instead of explaining teams through a traditional
+            organization chart,
+            I designed three fictional customers
+            and let each person experience
+            a different shopping journey.
+          </p>
+
+        </li>
+
+
+        <li>
+
+          <h2 id="behindH2">
+            One platform,
+            three very different purchase contexts.
+          </h2>
+
+          <p id="behindP2">
+            Alex shops for a Galaxy device in the United States,
+            Matthew uses an AI shopping assistant
+            to choose a TV in the United Kingdom,
+            and Vanessa buys an air conditioner in Mexico.
+
+            The journeys reveal how
+            <strong>
+              market, category and customer context change the experience.
+            </strong>
+          </p>
+
+        </li>
+
+
+        <li>
+
+          <h2 id="behindH3">
+            Each screen became a window into a capability.
+          </h2>
+
+          <p id="behindP3">
+            Instead of annotating every detail,
+            I added one interactive pointer
+            to each key moment.
+
+            Clicking it reveals the product,
+            experience, technology or commercial capability
+            behind what the customer sees.
+
+            The goal was to make a complex D2C ecosystem
+            <strong>
+              understandable through interaction rather than explanation.
+            </strong>
+          </p>
+
+        </li>
+
+
+        <li>
+
+          <h2 id="behindH4">
+            AI became a product partner,
+            not just a writing tool.
+          </h2>
+
+          <p id="behindP4">
+            I used AI throughout the process
+            to challenge the concept,
+            structure the journey,
+            write and refine interface copy,
+            debug JavaScript,
+            review screenshots
+            and generate visual assets.
+
+            The workflow felt closer to
+            <strong>
+              pairing with a designer,
+              engineer and editor at the same time
+            </strong>
+            than simply prompting a chatbot.
+          </p>
+
+        </li>
+
+
+        <li>
+
+          <h2 id="behindH5">
+            The personas were designed
+            as part of the product experience.
+          </h2>
+
+          <p id="behindP5">
+            Alex, Matthew and Vanessa
+            were created as pixel-art characters
+            with different lifestyles,
+            motivations and shopping needs.
+
+            Their full persona sheets are optional,
+            while the main experience stays lightweight:
+            meet the customer,
+            then follow the journey.
+          </p>
+
+        </li>
+
+
+        <li>
+
+          <h2 id="behindH6">
+            I deliberately kept the build simple.
+          </h2>
+
+          <p id="behindP6">
+            The prototype uses
+            <code>HTML</code>,
+            <code>CSS</code>
+            and
+            <code>JavaScript</code>
+            without a front-end framework.
+
+            Journey content is separated into a data layer,
+            so screens, copy, pointers and personas
+            can be changed without rebuilding
+            the interaction logic.
+          </p>
+
+        </li>
+
+
+        <li>
+
+          <h2 id="behindH7">
+            The hardest part was deciding what not to show.
+          </h2>
+
+          <p id="behindP7">
+            The first version tried to explain too much.
+
+            Extra screens,
+            detailed organizational structures
+            and supporting information
+            made the journey harder to understand.
+
+            Iteration gradually turned the project
+            into something simpler:
+            <strong>
+              one customer moment,
+              one insight,
+              one clear reason to keep exploring.
+            </strong>
+          </p>
+
+        </li>
+
+
+        <li>
+
+          <h2 id="behindH8">
+            What I learned
+          </h2>
+
+          <p id="behindP8">
+            AI lowers the cost of building,
+            but it does not remove
+            the need for product judgment.
+
+            The most important decisions
+            were still about
+            what problem to explain,
+            what information to remove,
+            how the journey should flow
+            and what the customer should understand next.
+          </p>
+
+        </li>
+
+
+      </ol>
+
+
+      <!-- Closing -->
+      <div class="behind-closing">
+
+        <p id="behindClosing1">
+          Built as an experiment in combining
+          product management,
+          AI and hands-on prototyping.
+        </p>
+
+
+        <p
+          class="behind-closing-sub"
+          id="behindClosing2"
+        >
+          Concept · Journey Design · Copy ·
+          Visual Direction · Vibe Coding · QA
+        </p>
+
+
+        <p
+          class="behind-closing-strong"
+          id="behindClosing3"
+        >
+          Product thinking, made interactive.
+        </p>
+
+      </div>
+
+
+      <p
+        class="project-disclaimer"
+        id="projectDisclaimer"
+      >
+        Unofficial personal project.
+        Product names, trademarks and screenshots
+        belong to their respective owners.
+      </p>
+
+
+      <button
+        class="behind-back-bottom"
+        id="behindBackBottom"
+        type="button"
+      >
+        ← Back to Explorer
+      </button>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================================================
+       Persona modal
+       ========================================================= -->
+  <div
+    class="persona-backdrop hidden"
+    id="personaBackdrop"
+  ></div>
+
+
+  <div
+    class="persona-modal hidden"
+    id="personaModal"
+  >
+
+    <button
+      class="persona-close"
+      id="personaClose"
+      type="button"
+      aria-label="Close persona"
+    >
+      ✕
+    </button>
+
+
+    <div class="persona-modal-inner">
+
+      <p
+        class="persona-eyebrow"
+        id="personaEyebrow"
+      >
+        Customer Persona
+      </p>
+
+
+      <img
+        class="persona-image"
+        id="personaImage"
+        src=""
+        alt=""
+      />
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================================
+       설명 패널
+       ========================================================= -->
+  <div
+    class="panel-backdrop hidden"
+    id="panelBackdrop"
+  ></div>
+
+
+  <aside
+    class="panel hidden"
+    id="panel"
+  >
+
+    <button
+      class="panel-close"
+      id="panelClose"
+      type="button"
+      aria-label="Close"
+    >
+      ✕
+    </button>
+
+
+    <p
+      class="panel-eyebrow"
+      id="panelEyebrow"
+    >
+      Behind this experience
+    </p>
+
+
+    <h2
+      class="panel-hook"
+      id="panelHook"
+    ></h2>
+
+
+    <div
+      class="panel-body"
+      id="panelBody"
+    ></div>
+
+
+    <div
+      class="panel-teams"
+      id="panelTeams"
+    ></div>
+
+
+    <p
+      class="panel-note"
+      id="panelNote"
+    ></p>
+
+  </aside>
+
+
+  <!-- =========================================================
+       개발자 모드
+       ========================================================= -->
+  <div
+    class="dev-readout hidden"
+    id="devReadout"
+  >
+
+    <span class="dev-tag">
+      DEV
+    </span>
+
+    <span id="devValue">
+      Click the phone screen
+    </span>
+
+  </div>
+
+
+  <!-- =========================================================
+       Footer
+       ========================================================= -->
+  <footer class="site-credit">
+
+    <span class="credit-name">
+      Sunny Lee · Product Manager
+    </span>
+
+    <span class="credit-sep">
+      ·
+    </span>
+
+    <span class="credit-meta">
+      Built with AI
+    </span>
+
+    <span class="credit-sep">
+      ·
+    </span>
+
+    <span class="credit-meta">
+      2026
+    </span>
+
+  </footer>
+
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
