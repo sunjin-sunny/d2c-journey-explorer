@@ -2210,8 +2210,9 @@ function openPanel(step) {
 
   journeyView.classList.add(
     'is-shifted'
-document.body.classList.add('overlay-open');
   );
+
+  document.body.classList.add('overlay-open');
 
 }
 
@@ -2230,8 +2231,9 @@ function closePanel() {
 
   journeyView.classList.remove(
     'is-shifted'
-document.body.classList.remove('overlay-open');
   );
+
+  document.body.classList.remove('overlay-open');
 
 }
 
