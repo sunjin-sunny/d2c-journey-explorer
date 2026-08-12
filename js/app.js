@@ -1586,7 +1586,23 @@ function renderCards() {
 /* =========================================================
    10. Persona
    ========================================================= */
+/* =========================================================
+   Overlay state
+   ========================================================= */
 
+function setOverlayOpen(isOpen) {
+
+  document.body.classList.toggle(
+    'overlay-open',
+    isOpen
+  );
+
+  document.body.style.overflow =
+    isOpen
+      ? 'hidden'
+      : '';
+
+}
 function openPersona(character) {
 
   const imagePath =
@@ -1611,10 +1627,9 @@ function openPersona(character) {
   personaBackdrop.classList.remove(
     'hidden'
   );
-document.body.classList.add('overlay-open');
 
-  document.body.style.overflow =
-    'hidden';
+
+  setOverlayOpen(true);
 
 }
 
@@ -1629,9 +1644,8 @@ function closePersona() {
     'hidden'
   );
 
-  document.body.classList.remove('overlay-open');
-  document.body.style.overflow =
-    '';
+
+  setOverlayOpen(false);
 
 }
 
@@ -2212,7 +2226,7 @@ function openPanel(step) {
     'is-shifted'
   );
 
-  document.body.classList.add('overlay-open');
+  setOverlayOpen(true);
 
 }
 
@@ -2233,7 +2247,7 @@ function closePanel() {
     'is-shifted'
   );
 
-  document.body.classList.remove('overlay-open');
+ setOverlayOpen(false);
 
 }
 
